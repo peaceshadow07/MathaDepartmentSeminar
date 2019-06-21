@@ -1,0 +1,26 @@
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.display{
+    width:100%;
+    height:auto;
+}
+
+.heading{
+    margin-top: 20px;
+    color:white;
+    text-shadow:2px 2px darkgray;
+    background: url(images/board.jpg);
+}
+
+.col-tabs{
+    width:12.5%;
+    text-shadow: :2px 2px #a3c2c2;
+    float:left;
+}
