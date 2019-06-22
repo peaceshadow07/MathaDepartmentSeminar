@@ -1,26 +1,72 @@
-body{
-    font-family: 'Noto Sans JP', sans-serif;
-    
+body {
+    font-family: 'Dosis', sans-serif;
+
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.display{
-    width:100%;
-    height:auto;
+p,
+li {
+    font-size: 24px;
 }
 
-.heading{
+.head {
+    color: #008080;
+}
+
+.heading {
     margin-top: 20px;
-    color:white;
-    text-shadow:2px 2px darkgray;
+    color: white;
+    text-shadow: 1px 1px darkgray;
     background: url(images/board.jpg);
 }
 
-.col-tabs{
-    width:12.5%;
+.col-tabs {
+    width: 12.5%;
     text-shadow: :2px 2px #a3c2c2;
-    float:left;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+
+
+.navbar {
+    display: flex;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.mainboard {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width:981px) {
+
+    /* For mobile phones: */
+    .navbar {
+        width: 20%;
+        flex-direction: column;
+        border-right: 2px solid darkgray;
+    }
+
+    .col-tabs {
+        width: auto;
+        margin-top: 15px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
