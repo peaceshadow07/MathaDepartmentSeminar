@@ -60,7 +60,7 @@ reg.onclick = async function () {
     selectTab();
     this.style.backgroundColor = "black";
     this.style.color = "white";
-    display.innerHTML = await '<object width=100% height=100% type="text/php" data="register.php" class="container"></object>';
+    display.innerHTML = await '<object width=100% height=100% type="text/php" data="register1.php" class="container"></object>';
 }
 
 con.onclick = async function () {
