@@ -89,6 +89,8 @@
             
             $sign = $_POST['sig'];
             
+            $sql_check = "SELECT * FROM $table WHERE number='$number' OR trans_id='$trans'";
+            if($conn->query($sql_check)->num_rows==0){
             $sql_insert = "INSERT INTO $table(name,desg,affi,gender,address,number,email,choice,title,trans_id,date_) VALUES ('$name','$desig','$affi','$gender','$addr','$number','$email','$choice','$title','$trans','$date1')";
             //echo $sql_insert;
             if($conn->query($sql_insert)){
@@ -96,6 +98,9 @@
             }else{
                 echo "<br>".$conn->error;
                 echo "<br>".$sql_insert;
+            }
+            }else{
+                echo "Exists";
             }
         }
     }
@@ -237,7 +242,7 @@
                             </div>
                             <div class="input-group">
                                 <label class="label">If yes, title of the talk or paper</label>
-                                <input type="text" class="input--style-4" name="titl" placeholder="Title" readonly required>
+                                <input type="text" class="input--style-4" name="titl" placeholder="Title" required>
                             </div>
 
                             <div class="row row-space">
@@ -276,26 +281,17 @@
     <script src="vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="js/global.js">
-    
-    </script>
- 
+    <script src="js/global.js"></script>
+<!--
     <script>
-        function myGeeks() {
-            var txt = document.getElementById("titl").readOnly;
-            console.log(txt);
-            document.getElementById("titl").readOnly = false;
+        function myGeeks1(){
+            document.getElementById("titl").disable = true;
         }
-
-        function myGeeks1() {
-            var txt = document.getElementById("titl").readOnly;
-            console.log(txt);
-            document.getElementById("titl").readOnly = true;
+        function myGeeks(){
+            document.getElementById("titl").disable = false;
         }
-
     </script>
-
-
+-->
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>

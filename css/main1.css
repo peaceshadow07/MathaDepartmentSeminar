@@ -1,0 +1,47 @@
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+
+/*
+        .parallax {
+            background: url("board.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+*/
+
+        .navbar {
+            overflow: hidden;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+        }
+
+        .head {
+            color: #008080;
+        }
+
+        .card {
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background: #fff;
+        }
+
+        .card-4 {
+            background: #fff;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-4 .card-body {
+            padding: 57px 65px;
+            padding-bottom: 65px;
+        }
