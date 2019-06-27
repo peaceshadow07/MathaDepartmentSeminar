@@ -10,13 +10,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/main1.css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
     <style>
         .parallax {
             background: url("board.jpg");
             background-attachment: fixed;
-            padding: 50px 0px;
+            padding: 20px 0px;
             color: white;
-            text-shadow: 1.5px 1.5px darkgray;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -39,31 +39,29 @@
     if(isset($_POST['sub'])){
         $conn = new mysqli($server,$username,$password,$db);
         if($conn){
-            $name = $_POST['first_name']." ".$_POST['mid_name']." ".$_POST['last_name'];
-            $affi = $_POST['affi'];
-            $desig = $_POST['desig'];
-            $gender = $_POST['gender'];
-            if($gender=='male'){
-                $gender='male';
-            }else{
-                $gender='female';
-            }
-            $trans = $_POST['trans'];
-            $email = $_POST['email'];
-            $addr = $_POST['addr'];
-            $number = $_POST['phone'];
-            $choice = $_POST['deli'];
-            if($choice=='yes'){
-                $choice='yes';
-            }else{
-                $choice='no';
-            }
-            $title = $_POST['titl'];
-            $date = $_POST['dat'];
+            $name = trim($_POST['first_name'])." ".trim($_POST['mid_name'])." ".trim($_POST['last_name']);
+            $affi = trim($_POST['affi']);
+            $desig = trim($_POST['desig']);
+            $gender = trim($_POST['gender']);
+
+            $trans = trim($_POST['trans']);
+            $email = trim($_POST['email']);
+            $addr = trim($_POST['addr']);
+            $number = trim($_POST['phone']);
+            $choice = trim($_POST['deli']);
+            $title = trim($_POST['titl']);
+            $date = trim($_POST['dat']);
             
-            $sign = $_POST['sig'];
-            
-            $sql_check = "SELECT * FROM $table WHERE number='$number' OR trans_id='$trans'";
+            $query = $name." ".$affi." ".$desig." ".$gender." ".$trans." ".$email." ".$addr." ".$number." ".$choice." ".$title." ".$date;
+            $len = strlen($query);
+            $l=0;
+            for($i=0; $i<$len;$i++){
+                if($query[$i]==';' || $query[$i]=='=' ||$query[$i]=='(' || $query[$i]==')' || $query[$i]=='[' ||$query[$i]==']'){
+                    break;
+                }
+            }
+            if($i==$len){
+            $sql_check = "SELECT * FROM $table WHERE email='$email' OR trans_id='$trans'";
             if($conn->query($sql_check)->num_rows==0){
                 $sql_insert = "INSERT INTO $table(name,desg,affi,gender,address,number,email,choice,title,trans_id,date_) VALUES ('$name','$desig','$affi','$gender','$addr','$number','$email','$choice','$title','$trans','$date')";
                 if($conn->query($sql_insert)){
@@ -75,36 +73,46 @@
                 }
             }else{
                 $fail = true;
-                $message = 'Entry Exists';
+                $message = 'Email or Transaction ID exists';
+            }
+                
+            }else{
+                $fail = true;
+                $message = "You entered wrong characters.";
             }
         }
     }
     ?>
     <div class="text-center" style="margin-bottom:0;">
-        <div class="parallax">
-            <div class="container text-center">
-                <div class="text-right" style="">
-                    <h2>NCAMAA 2019</h2>
+        <div class="parallax row">
+         
+            <div class="container text-center col-md-8">
+                <br />
+                <div class="" style="">
+                    <h6 class="text-uppercase">National conference on</h6> 
+                    <h4 class="text-uppercase">Advances in mathematical analysis and its applications</h4>
+                </div>
+                <div class="" style="">
+                    <h2>(NCAMAA-2019)</h2>
                 </div>
                 <br />
-                <div class="text-right" style="">
-                    <h4 class="text-uppercase">National conference on <br /> Advances in mathematical analysis and it's applications</h4>
+                <div class="text-center" style="font-weight: 20">
+                    organized by<br/>
+                    <h5>Department of Mathematics<br><b><a href="http://pgdavcollege.edu.in/" style="text-decoration: none;">P.G.D.A.V. College</a></b><br>(University of Delhi)</h5>
                 </div>
-                <br />
-                <div class="text-right" style="">
+                <br/>
+                <div class="" style="">
                     <h5>November 8-10, 2019</h5>
-                </div><br />
-                <div class="text-right" style="">
-            <h5><a href="http://pgdavcollege.edu.in/" style="text-decoration: none;">P.G.D.A.V. College</a> <br /> New Delhi</h5>
-                </div>
+
 
             </div>
         </div>
     </div>
-
+        </div>
+    </div>
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="margin-bottom:30px;">
-        <a class="navbar-brand" href="index.html">NCAMAA</a>
+        <a class="navbar-brand" href="index.html"><img src=logo.png height="30px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -118,7 +126,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="commitee.html">Commitees</a>
+                    <a class="nav-link" href="commitee.html">Committees</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="speakers.html">Speakers</a>
@@ -153,7 +161,7 @@
         </div>
     </div>
 
-    <div class="container wrapper--w680" style="margin-top:30px; margin-bottom:30px;">
+    <div class="container" style="margin-top:30px; margin-bottom:30px;">
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title">Instructions:</h2>
@@ -175,14 +183,12 @@
                         IFSC code : CBIN0283940<br />
                         MICR code : 110016069<br /></b>
                     <br />
-                    <b>Accommodation:</b><br />
-                    Limited accommodation will be available for outstation participants at
-                    nominal charges and based on first-come-first-serve basis.
-                    <br /><br />
+
                     <b>How to apply:</b><br />
                     Those interested in participating must submit the online registration
                     form and forward a copy of fee receipt generated after online payment at
-                    the email id <b>ncamaa2019@gmail.com</b>. Those presenting a paper must send the abstract of
+                    the email id <b>ncamaa2019@gmail.com</b>.
+                    <br />Those presenting a paper must send the abstract of
                     the presentation on the aforementioned email address latest by 20 October,
                     2019.
                     <br />
@@ -194,8 +200,8 @@
         </div>
     </div>
 
-    
-    <div class="container wrapper--w680">
+
+    <div class="container">
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title"><b>Registration Form</b></h2>
@@ -301,10 +307,6 @@
                                 <input class="form-control" type="date" name="dat" required>
                             </div>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label class="label">Signature</label>
-                            <input class="form-control" type="text" name="sig" placeholder="Sign" required>
-                        </div>
                     </div>
 
                     <button class="btn btn-primary" type="submit" name="sub">Submit</button>
@@ -344,7 +346,7 @@
 
     </div>
     <div class="container text-center">
-        &copy; NCAMAA-2019<br/>
+        &copy; NCAMAA-2019<br />
         Developed by Rajbir &amp; Kartikeya
     </div>
     <script>

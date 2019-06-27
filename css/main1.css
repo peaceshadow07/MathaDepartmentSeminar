@@ -3,15 +3,10 @@
             background: #aaa;
         }
 
-/*
-        .parallax {
-            background: url("board.jpg");
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .headlink {
+            text-decoration: none;
+            color: white;
         }
-*/
 
         .navbar {
             overflow: hidden;

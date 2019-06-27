@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap 4 Website Example</title>
+    <title>About</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,46 +10,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/main1.css">
-        <style>
-            .parallax {
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        .parallax {
             background: url("board.jpg");
             background-attachment: fixed;
-            padding: 50px 0px;
-                color:white;
-                text-shadow: 1.5px 1.5px darkgray;
-                background-position: center;
+            padding: 20px 0px;
+            color: white;
+            background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
-    
+
     </style>
 </head>
 
 <body>
     <div class="text-center" style="margin-bottom:0;">
-        <div class="parallax">
-            <div class="container text-center">
-                <div class="text-right" style="">
-                    <h2>NCAMAA 2019</h2>
+        <div class="parallax row">
+         
+            <div class="container text-center col-md-8">
+                <br />
+                <div class="" style="">
+                    <h6 class="text-uppercase">National conference on</h6> 
+                    <h4 class="text-uppercase">Advances in mathematical analysis and its applications</h4>
+                </div>
+                <div class="" style="">
+                    <h2>(NCAMAA-2019)</h2>
                 </div>
                 <br />
-                <div class="text-right" style="">
-                    <h4 class="text-uppercase">National conference on <br /> Advances in mathematical analysis and it's applications</h4>
+                <div class="text-center" style="font-weight: 20">
+                    organized by<br/>
+                    <h5>Department of Mathematics<br><b><a href="http://pgdavcollege.edu.in/" style="text-decoration: none;">P.G.D.A.V. College</a></b><br>(University of Delhi)</h5>
                 </div>
-                <br />
-                <div class="text-right" style="">
+                <br/>
+                <div class="" style="">
                     <h5>November 8-10, 2019</h5>
-                </div><br />
-                <div class="text-right" style="">
-            <h5><a href="http://pgdavcollege.edu.in/" style="text-decoration: none;">P.G.D.A.V. College</a> <br /> New Delhi</h5>
-                </div>
+
 
             </div>
         </div>
     </div>
+    </div>
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <a class="navbar-brand" href="index.html">NCAMAA</a>
+        <a class="navbar-brand" href="index.html"><img src=logo.png height="30px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -63,7 +68,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="commitee.html">Commitees</a>
+                    <a class="nav-link" href="commitee.html">Committees</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="speakers.html">Speakers</a>
@@ -87,7 +92,8 @@
     <div class="container wrapper--w680" style="margin-top:30px; margin-bottom:30px;">
         <div class="card card-4">
             <div class="card-body">
-                <p><h2>About the college:</h2>
+                <p>
+                    <h2>About the college:</h2>
                     Pannalal Girdharlal Dayanand Anglo-Vedic (PGDAV) College is an
                     institution of academic excellence, founded in 1957 by DAV College
                     Managing Society and is a constituent unit of University of Delhi, a
@@ -98,18 +104,24 @@
                     array of academic facilities. With the state-of- the art infrastructure,
                     the college meets all requirements of the individual students and
                     making their college life intellectually engaging and a fulfilling
-                    experience in all respects.<br /><br/>
+                    experience in all respects.<br /><br />
                     <b>Transportation:</b><br />
                     The college is located in Nehru Nagar. The nearest metro station is
                     Vinobhapuri, which is at a walking distance from the college. The
                     college is 11 kms away from New Delhi Railway Station while it is 22
-                    kms away from IGI airport, Delhi.
+                    kms away from IGI airport, Delhi.<br /><br />
+
+                    <b>Accomodation:</b><br />
+                    The college is well surruonded by various suitable hotels and hostels which may be easily accessed through Google search.
+                    <br /><br />
                 </p>
+            
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.082402417754!2d77.24870821497981!3d28.567288193781934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3b07cca3cad%3A0x83590d2e2d486ca9!2sPGDAV+College+University+of+Delhi!5e0!3m2!1sen!2sin!4v1561576103387!5m2!1sen!2sin" width="300" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
 
             </div>
         </div>
     </div>
-    <div class="container wrapper--w680" style="margin-top:30px; margin-bottom:30px;">
+    <div class="container wrapper--w680" style="margin-top:30px; margin-bottom:30px;" id="conf">
         <div class="card card-4">
             <div class="card-body">
                 <h2>About Conference</h2>
@@ -121,42 +133,42 @@
                 <p>Representative areas of the conference include, but are not restricted to </p>
 
                 <ul>
-                    <li>Multivariable analysis</li>
+                    <li>Real and Complex Analysis</li>
                     <li>Matrix and Fourier analysis</li>
                     <li>Analysis in the theory of operators</li>
-                    <li>Real and Complex Analysis</li>
+
                     <li>Spectral analysis of non-self adjoint operators</li>
                     <li>Harmonic analysis </li>
                     <li>Operator spaces and their applications</li>
                     <li>C*-algebras and Von Neumann algebras</li>
-                    <li>C*-algebras and Von Neumann algebras</li>
                     <li>Multiplication, composition operators </li>
-                    <li>Toepliz and Hankel Matrices</li>
+                    <li>Toepliz and Hankel Operators</li>
                     <li>Analysis in the theory of wavelets and dynamical systems</li>
                     <li>Analysis in computer programming and engineering sciences</li>
                     <li>Operator theoretical methods in factorization theory and integrable systems</li>
+                    <li>Applications to frame theory, boundary value problems, boundary integral methods, explicit solutions, singularities, fractal analysis</li>
                 </ul>
 
-                <p>In addition, there would be a special session for panel discussion on <strong>"Challenges in Mathematics in Higher Education".</strong> The purpose of this session is to cater the need of reformations in teaching methodologies in mathematics at higher education.</p>
+                <p>In addition, there would be a special session for panel discussion on <strong>"Challenges: Mathematics in Higher Education".</strong> The purpose of this session is to cater the need of reformations in teaching methodologies in mathematics at higher education.</p>
             </div>
         </div>
     </div>
     <div class="jumbotron text-center" style="margin-bottom:0">
-                <div class="row">
+        <div class="row">
             <div class="col-md-4 text-center">
                 <h4 class="head">PATRON</h4>
                 <h4>Dr. Mukesh Aggarwal</h4>
             </div>
             <div class="col-md-4 text-center">
                 <h4 class="head">CONVENER</h4>
-                <h4>Dr. Gopal Daqtt</h4>
+                <h4>Dr. Gopal Datt</h4>
             </div>
             <div class="col-md-4 text-center">
                 <h4 class="head">CO-CONVENER</h4>
                 <h4>Dr. Geeta Kalucha</h4>
             </div>
         </div>
-        <br/>
+        <br />
         <div class="row">
             <div class="col-md-6">
                 <h4 class="head">PROGRAM SECRETARY</h4>
@@ -167,10 +179,10 @@
                 <h4>Ms. Anu Kapoor</h4>
             </div>
         </div>
-        
+
     </div>
     <div class="container text-center">
-        &copy; NCAMAA-2019<br/>
+        &copy; NCAMAA-2019<br />
         Developed by Rajbir &amp; Kartikeya
     </div>
 
