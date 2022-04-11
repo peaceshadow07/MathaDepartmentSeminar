@@ -1,2 +1,1 @@
-This template was made by Colorlib (https://colorlib.com)
-Please visit our website for more awesome templates, themes and tools. 
+This Project includes a website to help in Mathematics department of P.G.D.A.V College for their Natiaonl Seminar. This project uses HTML, CSS, JavaScript and Bootstrap for frontend and PHP for Backend work.
